@@ -1,0 +1,15 @@
+<input class="form-control" [(ngModel)]="searchName" type="text" placeholder="Search Username"/>
+<button class="btn btn-primary" (click)="ShowUser()">Search</button>
+
+
+
+<div *ngIf="User; else NoUserBlock">
+    <br/>
+    <strong>{{User.login}}</strong>
+    <br/>
+    <img [src]="User.avatar_url">
+</div>
+
+<ng-template #NoUserBlock>
+    <div>No User Found</div>
+</ng-template>

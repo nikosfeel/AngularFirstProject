@@ -1,0 +1,64 @@
+<button class="btn btn-primary" [style.font-size.px]="FontSizee" (mouseover)="IncreaseSize()" (mouseout)="DecreaseSize()" 
+(click)="ToggleInfo()">{{!isHiddenInfo ? "Show Info" : "Hide Info"}}</button>
+
+
+
+
+
+<div *ngIf="isHiddenInfo">
+    You Opened this Window
+</div>
+
+<hr/>
+
+<input [(ngModel)]="Username" type="text" placeholder="Give Something"/>
+<p>{{Username}}</p>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid" *ngIf="isHiddenInfo">
+    <table *ngIf="Workpersons && Workpersons.length; else NoRecords" class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of Workpersons">
+                <td>{{emp.Name}}</td>
+                <td>{{emp.Salary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #NoRecords>
+        <h1>No Employees Found</h1>
+    </ng-template>
+    <hr />
+    
+    <button style="display: block; margin: 1%;" class="btn btn-primary" *ngFor="let name of Names">{{name}}</button>
+    
+    <p>{{a+b}}</p>
+    <p>{{a-b}}</p>
+    <p>{{a/b}}</p>
+    <p>{{a*b}}</p>
+    <p *ngIf="5>3">Kalimera</p>
+    
+    <div *ngIf="isAbleVote;else MitsosBlock">You Can Vote</div>
+    
+    <ng-template #MitsosBlock>
+        <strong>You Cannot Vote</strong>
+    </ng-template>
+    
+    
+    
+    <img [src]="PhotoUrl" [width]="width" [title]="Titlos" [style.border-radius.px]="BorderRadius">
+    
+    <strong [style.font-size.px]="FontSize">Kalispera</strong>
+</div>

@@ -1,0 +1,22 @@
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>BirthDate</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of Employees">
+            <td >{{emp.id}}</td>
+            <td >{{emp.name}}</td>
+            <td >{{emp.lastname}}</td>
+            <td >{{emp.age}}</td>
+            <td >{{emp.birthdate.getFullYear()}}</td>
+            <td >{{emp.salary}}</td>
+        </tr>
+    </tbody>
+</table>
